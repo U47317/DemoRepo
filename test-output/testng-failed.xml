@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Free CRM Automation Test suite]">
+  <listeners>
+    <listener class-name="com.crm.qa.extentreport.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="Free CRM testcases(failed)">
+    <classes>
+      <class name="com.crm.qa.testcases.ContactsPageTest">
+        <methods>
+          <include name="validateSingleContactSelectTest"/>
+          <include name="setup"/>
+          <include name="validaeCreateNewContactTest" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
+    </classes>
+  </test> <!-- Free CRM testcases(failed) -->
+</suite> <!-- Failed suite [Free CRM Automation Test suite] -->
