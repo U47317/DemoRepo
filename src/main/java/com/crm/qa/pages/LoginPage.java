@@ -53,6 +53,7 @@ public class LoginPage extends TestBase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//comment added
 		/*Actions actions = new Actions(driver);
 		actions.moveToElement(loginBtn).click().perform();*/
 		
