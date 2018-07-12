@@ -2,16 +2,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Free CRM Automation Test suite]">
   <listeners>
+    <listener class-name="com.crm.qa.util.TransformAnnotation"/>
     <listener class-name="com.crm.qa.extentreport.ExtentReporterNG"/>
   </listeners>
   <test thread-count="5" name="Free CRM testcases(failed)">
     <classes>
+      <class name="com.crm.qa.testcases.HomePageTest">
+        <methods>
+          <include name="verifyUsernameTest"/>
+          <include name="verifyContactsLinkTest"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="HomePageTitleTest"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.HomePageTest -->
+      <class name="com.crm.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
       <class name="com.crm.qa.testcases.ContactsPageTest">
         <methods>
           <include name="validateSingleContactSelectTest"/>
           <include name="setup"/>
-          <include name="validaeCreateNewContactTest" invocation-numbers="0 1 2"/>
+          <include name="validaeCreateNewContactTest"/>
           <include name="tearDown"/>
+          <include name="validateContactsPageLabel"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
     </classes>

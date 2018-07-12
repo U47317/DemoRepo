@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.apache.log4j.Logger;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.ContactsPage;
@@ -16,6 +17,7 @@ LoginPage loginPage;
 HomePage homePage;
 TestUtil testUtil;
 ContactsPage contactsPage;
+Logger log=Logger.getLogger(HomePageTest.class);
 	HomePageTest()
 	{
 		super();
@@ -36,22 +38,28 @@ ContactsPage contactsPage;
 	@Test(priority=1)
 	public void HomePageTitleTest()
 	{
+		log.info("****************Home Page Title Test****************************");
 		String title=homePage.validateTitle();
 		Assert.assertEquals(title, "CRMPRO","Home Page title is incorrect");
+		log.info("****************End of Home Page Title Test*********************");
 	}
 	
 	@Test(priority=2)
 	public void verifyUsernameTest()
 	{
+		log.info("*****************Verify Username Test*****************************");
 		testUtil.switchToFrame("mainpanel");
 		Assert.assertTrue(homePage.verifyCorrectUserName());
+		log.info("*****************End of Verify Username Test***********************");
 	}
 	
 	@Test(priority=3)
 	public void verifyContactsLinkTest()
 	{
-		 testUtil.switchToFrame("mainpanel");
+		log.info("****************Verify contacts link Test***************************"); 
+		testUtil.switchToFrame("mainpanel");
 		 contactsPage=homePage.clickOnContactsLink();
+		 log.info("***************End of Verify Contacts link Test********************");
 	}
 	
 	

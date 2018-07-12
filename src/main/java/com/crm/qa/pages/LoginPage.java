@@ -54,8 +54,6 @@ public class LoginPage extends TestBase{
 			e.printStackTrace();
 		}
 	
-		/*Actions actions = new Actions(driver);
-		actions.moveToElement(loginBtn).click().perform();*/
 		
 		loginBtn.click();
 		
